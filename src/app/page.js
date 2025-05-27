@@ -13,7 +13,7 @@ export default function Home() {
         <ResponsiveLink/>
         <h1 className="mt-[-1%] mb-[3%] md:mb-0 font-serif text-8xl md:text-9xl text-shadow-large tracking-wide font-black">Moon</h1>
         <ResponsiveLinkSmallScreen/>
-        <Link href="/contact">
+        <Link href="./contact">
           <button type="button" className="mt-[2%] md:mt-0 font-serif text-xl text-shadow-small hover:text-shadow-hover hover:duration-500 hover:cursor-pointer">Contact</button>
         </Link>
       </div>

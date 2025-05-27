@@ -6,7 +6,7 @@ export function ResponsiveLink() {
   return (
     <>
       {isLargeScreen && (
-        <Link href="/about">
+        <Link href="./about">
           <button type="button" className="font-serif text-xl text-shadow-small hover:text-shadow-hover hover:duration-500 hover:cursor-pointer">About</button>
         </Link>
       )}
