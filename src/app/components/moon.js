@@ -53,8 +53,11 @@ export function Moon() {
     const touchY = e.touches[0].clientY;
     const deltaY = touchStartY - touchY;
 
-    // Αν χρειάζεται κάνε scale, π.χ. deltaY * 1.5
-    setVirtualScroll((prev) => Math.max(0, prev + deltaY));
+    if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+      setVirtualScroll((prev) => Math.max(0, prev + (1.5*deltaY)));
+    } else {
+      setVirtualScroll((prev) => Math.max(0, prev + deltaY));
+    }
     touchStartY = touchY; // για συνεχή ροή
   };
 
