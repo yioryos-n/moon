@@ -19,6 +19,7 @@
   --text-shadow-small: 0px 0px 3px #EEF0F2;
   --text-shadow-hover: 0px 0px 15px #EEF0F2;
   --text-shadow-hover-dark: 0px 0px 15px #08091F;
+  --background-image-night: linear-gradient(to bottom, #05060A, #08091F, #08091F, #08091F, #1F203B);
 }
 
 @media (prefers-color-scheme: dark) {

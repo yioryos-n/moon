@@ -54,7 +54,7 @@ export function Moon() {
     const deltaY = touchStartY - touchY;
 
     if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      setVirtualScroll((prev) => Math.max(0, prev + (1.5*deltaY)));
+      setVirtualScroll((prev) => Math.max(0, prev + (2*deltaY)));
     } else {
       setVirtualScroll((prev) => Math.max(0, prev + deltaY));
     }
@@ -72,7 +72,7 @@ export function Moon() {
   };
 }, []);
 
-  index = Math.floor(virtualScroll/108); //maps the wheel movement to an array index.
+  index = Math.max(index, Math.floor(virtualScroll/108)); //maps the wheel movement to an array index.
 
   if (index >= 0 && index < v.length - 1 && halfPointDynamic == 0 && halfPointStatic == 0) {
     //new moon => waxing crescent

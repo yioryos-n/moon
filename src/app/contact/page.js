@@ -18,7 +18,7 @@ function SocialMediaLink({image_path, alt, url, text}) {
 export default function Contact() {
   return (
     <div className="bg-[#EEF0F2] text-[#08091F] w-screen h-screen flex flex-col items-start font-serif pl-[5%] pt-[4%]">
-        <h1 className="text-8xl md:text-9xl font-bold">Contact</h1>
+        <h1 className="text-7xl md:text-9xl font-bold">Contact</h1>
         <p className="text-lg mt-[4%] mb-[1%]">Find project repository on Github:</p>
         <SocialMediaLink image_path="/github.png" alt="Github icon." url="https://github.com/yioryos-n" text="yioryos-n" />
         <p className="text-lg mt-[2%] mb-[1%]">Take a look at my zine, Kourtina3000:</p>
