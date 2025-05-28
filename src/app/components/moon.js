@@ -14,7 +14,7 @@ export function Moon() {
   */
   const dark = "#08091F";
   const light = "#EEF0F2";
-  
+
   const [virtualScroll, setVirtualScroll] = useState(0);  //scroll controls the moon phase by controlling the "dynamic" curve.
   const [halfPointDynamic, setHalfPointDynamic] = useState(0); //controls the orientation of the path.
   const [halfPointStatic, setHalfPointStatic] = useState(0); //controls the orientation of the path.
@@ -54,9 +54,9 @@ export function Moon() {
     const deltaY = touchStartY - touchY;
 
     if (/Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-      setVirtualScroll((prev) => Math.max(0, prev + (2*deltaY)));
+      setVirtualScroll((prev) => Math.max(prev, prev + (2*deltaY)));
     } else {
-      setVirtualScroll((prev) => Math.max(0, prev + deltaY));
+      setVirtualScroll((prev) => Math.max(prev, prev + deltaY));
     }
     touchStartY = touchY; // για συνεχή ροή
   };
@@ -72,7 +72,7 @@ export function Moon() {
   };
 }, []);
 
-  index = Math.max(index, Math.floor(virtualScroll/108)); //maps the wheel movement to an array index.
+  index = Math.floor(virtualScroll/108); //maps the wheel movement to an array index.
 
   if (index >= 0 && index < v.length - 1 && halfPointDynamic == 0 && halfPointStatic == 0) {
     //new moon => waxing crescent
