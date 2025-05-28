@@ -15,5 +15,5 @@ f:"$Sreact.suspense"
 9:null
 d:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
 8:null
-11:{"metadata":[["$","title","0",{"children":"Moon"}],["$","meta","1",{"name":"description","content":"An interactive moon phase model."}],["$","link","2",{"rel":"icon","href":"/icon.png?56a81f8b7e49c3e6","type":"image/png","sizes":"44x44"}]],"error":null,"digest":"$undefined"}
+11:{"metadata":[["$","title","0",{"children":"Moon"}],["$","meta","1",{"name":"description","content":"An interactive moon phase model."}],["$","link","2",{"rel":"icon","href":"./icon.png?56a81f8b7e49c3e6","type":"image/png","sizes":"44x44"}]],"error":null,"digest":"$undefined"}
 b:{"metadata":"$11:metadata","error":null,"digest":"$undefined"}
