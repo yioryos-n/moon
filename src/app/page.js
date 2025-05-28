@@ -8,7 +8,7 @@ import { Moon } from './components/moon';
 
 export default function Home() {
   return (    
-    <div className="w-screen h-screen grid grid-cols-3, grid-rows-3 items-center">
+    <div className="w-screen h-dvh grid grid-cols-3, grid-rows-3 items-center">
       <div className="p-5 mt-[-6%] row-start-1 row-end-2 col-start-1 col-end-4 flex flex-col items-center md:flex-row md:justify-between md:items-start">
         <ResponsiveLink/>
         <h1 className="mt-[-1%] mb-[3%] md:mb-0 font-serif text-8xl md:text-9xl text-shadow-large tracking-wide font-black">Moon</h1>

@@ -2,7 +2,7 @@
   "name": "moon",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://your-username.github.io/moon",
+  "homepage": "https://moon.github.io/moon",
   "scripts": {
     "dev": "next dev",
     "start": "next start",

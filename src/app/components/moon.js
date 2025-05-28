@@ -37,17 +37,39 @@ export function Moon() {
   */
   const vreversed = v.toReversed(); 
 
-  //listener for user wheel event.
+  //listener for user wheel event and touch event.
   useEffect(() => {
     const handleWheel = (e) => {
       setVirtualScroll((prev) => Math.max(prev, prev + e.deltaY));
     };
   
-    window.addEventListener('wheel', handleWheel);
-    return () => window.removeEventListener('wheel', handleWheel);
-  }, []);
+    let touchStartY = 0;
 
-  index = virtualScroll/108; //maps the wheel movement to an array index.
+  const handleTouchStart = (e) => {
+    touchStartY = e.touches[0].clientY;
+  };
+
+  const handleTouchMove = (e) => {
+    const touchY = e.touches[0].clientY;
+    const deltaY = touchStartY - touchY;
+
+    // Αν χρειάζεται κάνε scale, π.χ. deltaY * 1.5
+    setVirtualScroll((prev) => Math.max(0, prev + deltaY));
+    touchStartY = touchY; // για συνεχή ροή
+  };
+
+  window.addEventListener('wheel', handleWheel);
+  window.addEventListener('touchstart', handleTouchStart);
+  window.addEventListener('touchmove', handleTouchMove);
+
+  return () => {
+    window.removeEventListener('wheel', handleWheel);
+    window.removeEventListener('touchstart', handleTouchStart);
+    window.removeEventListener('touchmove', handleTouchMove);
+  };
+}, []);
+
+  index = Math.floor(virtualScroll/108); //maps the wheel movement to an array index.
 
   if (index >= 0 && index < v.length - 1 && halfPointDynamic == 0 && halfPointStatic == 0) {
     //new moon => waxing crescent

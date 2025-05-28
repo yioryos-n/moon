@@ -1,15 +1,15 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import { ReturnButton } from '../components/button'
 
 function SocialMediaLink({image_path, alt, url, text}) {
   return (
     <div className="text-lg flex items-center font-it gap-3 italic">
-          <Image src={image_path}
-                width="50"
-                height="50"
-                alt={alt}>
-          </Image>
+          <img
+            src={image_path}
+            width="50"
+            height="50"
+            alt={alt}
+          />
           <Link href={url}>{text}</Link>
     </div>
   )

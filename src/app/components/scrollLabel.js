@@ -8,14 +8,32 @@ export function ScrollLabel() {
 
   //wheel event listener
   useEffect(() => {
-    const handleWheel = () => {
+    const handleScroll = () => {
       setScrolled(true);
     };
 
-    window.addEventListener('wheel', handleWheel);
+    let touchStartY = 0;
+    const handleTouchStart = (e) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e) => {
+      const touchY = e.touches[0].clientY;
+      const deltaY = Math.abs(touchStartY - touchY);
+
+      if (deltaY > 10) {
+        setScrolled(true);
+      }
+    };
+
+    window.addEventListener("wheel", handleScroll);
+    window.addEventListener("touchstart", handleTouchStart);
+    window.addEventListener("touchmove", handleTouchMove);
 
     return () => {
-      window.removeEventListener('wheel', handleWheel);
+      window.removeEventListener("wheel", handleScroll);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
     };
   }, []);
 
